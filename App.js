@@ -1,14 +1,14 @@
 import Home from './src/screens/Home';
 import * as React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
   MD3LightTheme as DefaultTheme,
   Provider as PaperProvider,
 } from 'react-native-paper';
 import Intro from './src/screens/Intro';
-
-const Stack = createNativeStackNavigator();
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+const Tab = createMaterialBottomTabNavigator();
 const theme = {
   ...DefaultTheme,
   myOwnProperty: true,
@@ -60,10 +60,28 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}} >
-        <Stack.Screen name = "Intro" component={Intro}/>
-        <Stack.Screen name = "Home" component={Home}/>
-      </Stack.Navigator>
+      <Tab.Navigator
+        screenOptions={({ route }) => ({
+          tabBarIcon: ({ focused, color, size }) => {
+            let iconName;
+            if (route.name === 'Intro') {
+              iconName = focused
+                ? 'camera'
+                : 'ios-information-circle-outline';
+            } else if (route.name === 'Home') {
+              iconName = focused ? 'ios-list' : 'ios-list-outline';
+            }
+
+            // You can return any component that you like here!
+            return <Ionicons name={iconName} size={size} color={color} />;
+          },
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'gray',
+        })}
+      >
+        <Tab.Screen name="2" component={Intro} />
+        <Tab.Screen name="Poggers2" component={Home} />
+      </Tab.Navigator>
     </NavigationContainer>
     </PaperProvider>
   );

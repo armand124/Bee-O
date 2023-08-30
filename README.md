@@ -18,10 +18,6 @@ Bee-O is a React Native app designed to aid incoming medical students in prepari
 3. Install dependencies: `npm install`
 4. Run the app: `npm expo start`
 
-## Screenshots 📸
-
-![Screenshot 1](screenshots/screenshot2.PNG) ![Screenshot 2](screenshots/screenshot3.PNG)
-
 ## License 📜
 
 This project is licensed under the MIT License.

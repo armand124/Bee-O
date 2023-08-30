@@ -1,4 +1,4 @@
-# MedicalStudyPal - 📚 Educational App for Medical Students
+# Bee-O - 📚 Educational App for Medical Students
 
 Bee-O is a React Native app designed to aid incoming medical students in preparing for tests. It offers tailored lessons and practice tests for the medical field. 🩺💉
 
